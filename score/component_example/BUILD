@@ -13,6 +13,23 @@
 
 load("@score_docs_as_code//:docs.bzl", "docs_bundle")
 
+cc_library(
+    name = "component_example",
+    srcs = ["src/component_example.cpp"],
+    hdrs = ["src/component_example.hpp"],
+    strip_include_prefix = "/",
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "component_example_test",
+    srcs = ["tests/component_example_test.cpp"],
+    deps = [
+        ":component_example",
+        "@googletest//:gtest_main",
+    ],
+)
+
 filegroup(
     name = "all_sources",
     srcs = glob(["src/**/*.cpp", "src/**/*.hpp"], allow_empty = True),
