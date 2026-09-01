@@ -17,7 +17,6 @@ cc_library(
     name = "component_example",
     srcs = ["src/component_example.cpp"],
     hdrs = ["src/component_example.hpp"],
-    strip_include_prefix = "/",
     visibility = ["//visibility:public"],
 )
 
