@@ -10,30 +10,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
-#ifndef SCORE_LIB_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP
-#define SCORE_LIB_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP
 
-#include <cstdint>
+#ifndef SCORE_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP_
+#define SCORE_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP_
+
+#include <string>
 
 namespace score {
 namespace component_example {
 
-/// \brief A simple counter demonstrating component structure and conventions.
-class Counter final {
-  public:
-    explicit Counter(std::int32_t initial_value = 0);
-
-    void increment();
-    void decrement();
-    void reset();
-
-    std::int32_t get_value() const;
-
-  private:
-    std::int32_t value_;
-};
+// req-traceability: comp_req__component_example__hello_message
+std::string make_hello_message(const std::string& name);
 
 }  // namespace component_example
 }  // namespace score
 
-#endif  // SCORE_LIB_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP
+#endif  // SCORE_COMPONENT_EXAMPLE_COMPONENT_EXAMPLE_HPP_

@@ -29,16 +29,11 @@ cc_test(
     ],
 )
 
-filegroup(
-    name = "all_sources",
-    srcs = glob(["src/**/*.cpp", "src/**/*.hpp"], allow_empty = True),
-)
-
 docs_bundle(
     name = "docs",
     source_dir = "docs",
-    scan_code = [
-        ":all_sources",
+    code_targets = [
+        ":component_example",
     ],
     visibility = ["//visibility:public"],
 )

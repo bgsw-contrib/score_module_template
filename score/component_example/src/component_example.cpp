@@ -10,27 +10,15 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+
 #include "score/component_example/src/component_example.hpp"
 
 namespace score {
 namespace component_example {
 
-Counter::Counter(std::int32_t initial_value) : value_{initial_value} {}
-
-void Counter::increment() {
-    ++value_;
-}
-
-void Counter::decrement() {
-    --value_;
-}
-
-void Counter::reset() {
-    value_ = 0;
-}
-
-std::int32_t Counter::get_value() const {
-    return value_;
+// req-traceability: comp_req__component_example__hello_message
+std::string make_hello_message(const std::string& name) {
+    return "Hello, " + name + "!";
 }
 
 }  // namespace component_example

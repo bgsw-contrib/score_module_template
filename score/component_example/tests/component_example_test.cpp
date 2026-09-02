@@ -10,43 +10,19 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+
 #include "score/component_example/src/component_example.hpp"
 
 #include <gtest/gtest.h>
+#include <string>
 
 namespace score {
 namespace component_example {
-namespace {
 
-TEST(CounterTest, DefaultConstructorStartsAtZero) {
-    Counter counter;
-    EXPECT_EQ(counter.get_value(), 0);
+TEST(ComponentExampleTest, MakeHelloMessageReturnsExpectedGreeting) {
+    EXPECT_EQ(make_hello_message("World"), "Hello, World!");
+    EXPECT_EQ(make_hello_message("SCORE"), "Hello, SCORE!");
 }
 
-TEST(CounterTest, ConstructorWithInitialValue) {
-    Counter counter{42};
-    EXPECT_EQ(counter.get_value(), 42);
-}
-
-TEST(CounterTest, IncrementIncreasesValue) {
-    Counter counter;
-    counter.increment();
-    counter.increment();
-    EXPECT_EQ(counter.get_value(), 2);
-}
-
-TEST(CounterTest, DecrementDecreasesValue) {
-    Counter counter{5};
-    counter.decrement();
-    EXPECT_EQ(counter.get_value(), 4);
-}
-
-TEST(CounterTest, ResetSetsValueToZero) {
-    Counter counter{10};
-    counter.reset();
-    EXPECT_EQ(counter.get_value(), 0);
-}
-
-}  // namespace
 }  // namespace component_example
 }  // namespace score
